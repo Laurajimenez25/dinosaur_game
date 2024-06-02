@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "programador novato",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 96.71, "left": 11.06, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -169.37, "left": -224, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -15.9, "left": -161.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 217.4,
+      "left": 249.6,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 169.4,
+      "left": 249.6,
+      "attrs": { "color": "yellow" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:K", "esp:GND.1", "black", [ "v2.92", "h94.9", "v187.96" ] ],
+    [ "lcd1:E", "esp:D23", "gray", [ "v34.9", "h134.76", "v30.98" ] ],
+    [ "lcd1:RW", "esp:GND.2", "black", [ "v0" ] ],
+    [ "lcd1:VDD", "esp:VIN", "red", [ "v0" ] ],
+    [ "lcd1:VSS", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pot1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "lcd1:A", "esp:VIN", "red", [ "v6.08", "h95.36", "v194.3" ] ],
+    [ "lcd1:D7", "esp:D21", "orange", [ "v11.33", "h97.08", "v93.45" ] ],
+    [ "lcd1:D6", "esp:D19", "green", [ "v16.26", "h99.05", "v97.82" ] ],
+    [ "lcd1:D5", "esp:D18", "blue", [ "v23.47", "h98.76", "v100.11" ] ],
+    [ "lcd1:D4", "esp:D5", "violet", [ "v28.74", "h96.21", "v104.44" ] ],
+    [ "lcd1:RS", "esp:D22", "purple", [ "v40.9", "h147.9", "v34.98" ] ],
+    [ "pot1:SIG", "lcd1:V0", "cyan", [ "v15.15", "h90.72" ] ],
+    [ "btn1:1.l", "esp:D4", "green", [ "h-96", "v-9.6" ] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [ "h0" ] ],
+    [ "btn2:2.l", "esp:GND.1", "black", [ "h-38.4", "v67.4", "h-105.6" ] ],
+    [ "btn2:1.l", "esp:D2", "green", [ "h-115.2", "v38.4" ] ]
+  ],
+  "dependencies": {}
+}
